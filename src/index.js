@@ -48,7 +48,7 @@ class FtpWatcher extends FtpClient {
               this.fileNameContains.test(fileName)
           })
         this.emit('snapshot', filteredSnapshot)
-        this.destroy()
+        this.end()
       })
       .catch(err => this.emit('error', err))
 
@@ -57,8 +57,8 @@ class FtpWatcher extends FtpClient {
 
   watch () {
     this.on('ready', () => console.log('FTP server ready.'))
-    this.on('greeting', m => console.log(`Connected to: ${m}`))
-    this.on('close', () => console.log('FTP connection closed.'))
+    // this.on('greeting', m => console.log(`Connected to: ${m}`))
+    // this.on('close', () => console.log('FTP connection closed.'))
 
     const watchSchedule = later.parse.cron(this.cron, true)
     this.scheduler = later.setInterval(this.getSnapshot.bind(this), watchSchedule)
@@ -66,7 +66,7 @@ class FtpWatcher extends FtpClient {
 
   stop () {
     this.scheduler.clear()
-    this.destroy()
+    this.end()
     this.removeAllListeners()
   }
 

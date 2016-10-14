@@ -4,7 +4,8 @@
   "description": "Watch an FTP server for file and directory tree changes.",
   "main": "./src/index.js",
   "scripts": {
-    "test": "tape tests/*.js | tap-spec"
+    "test": "node tests/*.js | tap-spec",
+    "reinstall": "rimraf node_modules && npm install"
   },
   "repository": {
     "type": "git",
