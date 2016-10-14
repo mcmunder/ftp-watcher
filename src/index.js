@@ -1,9 +1,5 @@
 const FtpClient = require('ftp')
 const later = require('later')
-const dotenv = require('dotenv')
-
-// Make environment variables available from .env
-dotenv.config()
 
 class FtpWatcher extends FtpClient {
   constructor (opts) {

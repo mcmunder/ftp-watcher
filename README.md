@@ -2,6 +2,8 @@
 
 Watch an FTP server for file and directory tree changes.
 
+[![NPM](https://nodei.co/npm/ftp-watcher.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ftp-watcher/)
+
 ## Install
 
 `npm install --save ftp-watcher`
