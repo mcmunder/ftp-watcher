@@ -1,6 +1,6 @@
 {
   "name": "ftp-watcher",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Watch an FTP server for file and directory tree changes.",
   "main": "./src/index.js",
   "scripts": {
