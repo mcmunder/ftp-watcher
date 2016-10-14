@@ -48,7 +48,7 @@ class FtpWatcher extends FtpClient {
               this.fileNameContains.test(fileName)
           })
         this.emit('snapshot', filteredSnapshot)
-        this.end()
+        this.destroy()
       })
       .catch(err => this.emit('error', err))
 
@@ -66,7 +66,7 @@ class FtpWatcher extends FtpClient {
 
   stop () {
     this.scheduler.clear()
-    this.end()
+    this.destroy()
     this.removeAllListeners()
   }
 
