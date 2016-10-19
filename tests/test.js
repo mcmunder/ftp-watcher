@@ -1,7 +1,7 @@
 const FtpWatcher = require('../src/index')
-const test = require('tape')
+// const test = require('tape')
 
-test('test ftp-watcher', should => {
+// test('test ftp-watcher', should => {
   const ftpCredentials = {
     host: 'speedtest.tele2.net' // a public FTP test server
   // port: defaults to 21
@@ -11,7 +11,7 @@ test('test ftp-watcher', should => {
 
   const speedtestWatcher = new FtpWatcher({
     ftpCredentials: ftpCredentials,
-    cron: '*/3 * * * * *',
+    cron: '*/10 * * * * *',
     fileNameContains: '100GB'
   })
 
@@ -19,8 +19,9 @@ test('test ftp-watcher', should => {
   speedtestWatcher.on('snapshot', handleSnapshot)
 
   function handleSnapshot (snapshot) {
-    should.equal(snapshot[0], '/100GB.zip')
-    speedtestWatcher.stop()
+    console.log(snapshot)
+    // should.equal(snapshot[0], '/100GB.zip')
+    // speedtestWatcher.stop()
   }
 
   function handleError (error) {
@@ -29,5 +30,5 @@ test('test ftp-watcher', should => {
 
   speedtestWatcher.watch()
 
-  should.end()
-})
+//   should.end()
+// })
