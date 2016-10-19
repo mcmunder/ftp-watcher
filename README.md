@@ -1,5 +1,7 @@
 # ftp-watcher
 
+[![Join the chat at https://gitter.im/mcmunder/ftp-watcher](https://badges.gitter.im/mcmunder/ftp-watcher.svg)](https://gitter.im/mcmunder/ftp-watcher?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Watch an FTP server for file and directory tree changes.
 
 [![NPM](https://nodei.co/npm/ftp-watcher.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ftp-watcher/)
